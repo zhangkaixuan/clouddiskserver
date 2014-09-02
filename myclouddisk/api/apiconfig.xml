@@ -1,0 +1,592 @@
+<apiconfig>
+
+    <apis>
+    
+    	<api name="scloud_get_auth">
+			<name>scloud_get_auth</name>
+			<description>
+				standard api designed for scloud to get auth url and token
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="auth_url" />
+				<param name="user" />
+				<param name="key" />
+				<param name="domain_name" />
+			</input>
+			<output>
+				<result name="storage_url" />
+				<result name="token" />
+			</output>
+    		
+    		<swift>
+    			<name>get_auth</name>
+    			<description>
+    				swift api designed to get auth url and token
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="auth_url" />
+    				<param name="user" ref="user" />
+    				<param name="key" ref="key" />
+    				<param name="tenant_name" ref="domain_name" />
+    			</input>
+    			<output>
+					<result name="storage_url" />
+					<result name="token" />
+    			</output>
+    		</swift>
+    		
+    		<s3>
+    			<name>s3_head_domain</name>
+    			<description>
+    				s3 api designed for scloud domain head operation
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_head_domain">
+			<name>scloud_head_domain</name>
+			<description>
+				standard api designed for scloud to head domain
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>head_account</name>
+    			<description>
+    				swift api designed to head domain
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_get_domain">
+			<name>scloud_get_domain</name>
+			<description>
+				standard api designed for scloud to get domain
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>get_account</name>
+    			<description>
+    				swift api designed to get domain
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>get_account</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_post_domain">
+			<name>scloud_post_domain</name>
+			<description>
+				standard api designed for scloud to post domain with headers
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="headers" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>post_account</name>
+    			<description>
+    				swift api designed to post domain with headers
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+					<param name="headers" ref = "headers"/>
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_get_container">
+			<name>scloud_get_container</name>
+			<description>
+				standard api designed for scloud to get container
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>get_container</name>
+    			<description>
+    				swift api designed to get container
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_head_container">
+			<name>scloud_head_container</name>
+			<description>
+				standard api designed for scloud to head container
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>head_container</name>
+    			<description>
+    				swift api designed to head domain
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+					<param name="container" ref="container" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_put_container">
+			<name>scloud_put_container</name>
+			<description>
+				standard api designed for scloud to put container
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>put_container</name>
+    			<description>
+    				swift api designed to head domain
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_post_container">
+			<name>scloud_post_container</name>
+			<description>
+				standard api designed for scloud to post container
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+				<param name="headers" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>post_container</name>
+    			<description>
+    				swift api designed to post container
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name= "url" ref= "storage_url" />
+    				<param name= "token" ref= "token" />
+    				<param name= "container" ref= "container" />
+    				<param name= "headers" ref= "headers" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_delete_container">
+			<name>scloud_delete_container</name>
+			<description>
+				standard api designed for scloud to head domain
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>delete_container</name>
+    			<description>
+    				swift api designed to delete container
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_get_object">
+			<name>scloud_get_object</name>
+			<description>
+				standard api designed for scloud to get object
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+				<param name="object" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>get_object</name>
+    			<description>
+    				swift api designed to get object
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    				<param name="name" ref="object" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_head_object">
+			<name>scloud_head_object</name>
+			<description>
+				standard api designed for scloud to head object
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+				<param name="object" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>head_object</name>
+    			<description>
+    				swift api designed to head object
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    				<param name="name" ref="object" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_put_object">
+			<name>scloud_put_object</name>
+			<description>
+				standard api designed for scloud to put object
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+				<param name="object" />
+				<param name="contents" />
+				<param name="headers" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>put_object</name>
+    			<description>
+    				swift api designed to put object
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    				<param name="name" ref="object" />
+    				<param name="contents" ref="contents" />
+    				<param name="headers" ref="headers" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_post_object">
+			<name>scloud_post_object</name>
+			<description>
+				standard api designed for scloud to post object
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+				<param name="object" />
+				<param name="headers" />
+				
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>post_object</name>
+    			<description>
+    				swift api designed to post object
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    				<param name="name" ref="object" />
+					<param name="headers" ref="headers" />
+    				
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    	<api name="scloud_delete_object">
+			<name>scloud_delete_object</name>
+			<description>
+				standard api designed for scloud to delete object
+			</description>
+			<type>standard</type>
+			<input>
+				<param name="storage_url" />
+				<param name="token" />
+				<param name="container" />
+				<param name="object" />
+			</input>
+			<output></output>
+    		
+    		<swift>
+    			<name>delete_object</name>
+    			<description>
+    				swift api designed to delete object
+    			</description>
+    			<type>swift</type>
+    			<input>
+    				<param name="url" ref="storage_url" />
+    				<param name="token" ref="token" />
+    				<param name="container" ref="container" />
+    				<param name="name" ref="object" />
+    			</input>
+    			<output></output>
+    		</swift>
+    		
+    		<s3>
+    			<name>head_domain</name>
+    			<description>
+    				s3 api designed for to head domain
+    			</description>
+    			<type>s3</type>
+    			<input>
+    				<param name="host_ip" ref="domain_host" />
+    			</input>
+    			<output>
+    			</output>
+    		</s3>
+    	</api>
+    
+    </apis>
+
+</apiconfig>

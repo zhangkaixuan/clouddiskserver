@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//api/api_map.py=utf-8
+encoding//api/utils.py=utf-8
+encoding//metadata/data_model.py=utf-8
+encoding//proxy/controller.py=utf-8
+encoding//proxy/params.py=utf-8
+encoding//proxy/server.py=utf-8
+encoding//services/backend/pie/server.py=utf-8
+encoding//services/frontend/resmgr/capability.py=utf-8
+encoding//services/frontend/resmgr/container.py=utf-8
+encoding//services/frontend/resmgr/domain.py=utf-8
+encoding//services/frontend/resmgr/obj.py=utf-8
+encoding//test/cloud_test_python.py=utf-8

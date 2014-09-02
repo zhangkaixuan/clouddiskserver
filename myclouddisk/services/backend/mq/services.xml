@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services>
+
+	<service type="call">
+		
+		<name>pie</name>
+		<host>localhost</host>
+		<description>
+			pie service to monitor domain size and may be 
+			responsible for production environment
+		</description>
+		<params>
+			<exchange type="direct">pie</exchange>
+			<queue type="">pie_queue</queue>
+			<callback>on_request_pie</callback>
+		</params>
+	
+	</service>
+
+	<service type="call">
+		<name>metadata</name>
+		<host>localhost</host>
+		<description>
+			metadata service to manage the metadata of the system. 
+			the request body dictionary pattern should be like this: 
+			{"metadata_opr":"", "meatadata_target":""", [...]}
+		</description>
+		<params>
+			<exchange type="direct">metadata</exchange>
+			<queue type="">meta_queue</queue>
+			<callback>on_request_metadata</callback>
+			
+		</params>
+	
+	</service>
+	
+	<service type="cast">
+		<name>log</name>
+		<host>localhost</host>
+		<description>log service </description>
+		<params>
+			<exchange type="fanout">logs</exchange>
+			<queue type="">logs_queue</queue>
+			<callback>on_request_log</callback>
+			
+		</params>
+	
+	</service>
+
+</services>

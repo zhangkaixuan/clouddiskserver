@@ -52,7 +52,7 @@ class ControllerFilter():
         #modify by zhangkaixuan
         #        
         x_url_path = quoted_path.strip('/').split('/')
-        if(req.method == 'POST'):
+        if req.method == 'POST':
             req.headers['current-name'] = x_url_path[-1]
             url_path = x_url_path[0:-1]
         else:
